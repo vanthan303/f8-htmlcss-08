@@ -1,0 +1,4 @@
+// kéo từng folder vào, hệ thống sẽ tự hiểu và tìm file _index.scss trong mỗi folder để biên dịch
+@use "./base";
+@use "./layout";
+@use "./components";
