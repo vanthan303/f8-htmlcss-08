@@ -1,3 +1,5 @@
+@use "../abstracts";
+
 //*** Các biến dành cho giao diện sáng
 html {
     // khai báo các biến để dùng chung cho những nơi khác cần dùng đến
@@ -5,8 +7,13 @@ html {
     --icon-color: brightness(0) saturate(100%) invert(7%) sepia(11%)
         saturate(4567%) hue-rotate(216deg) brightness(103%) contrast(95%);
 
+    --body-bg: #F6F6F6;
     --header-bg-color: #eee;
     --top-act-group-bg-color: #fff;
     --top-act-group-shadow: rgba(237, 237, 246, 0.2);
     --top-act-group-separate: #ededf6;
+
+    @include abstracts.breakpoint(lg) {
+        --header-bg-color: #fff;
+    }
 }
