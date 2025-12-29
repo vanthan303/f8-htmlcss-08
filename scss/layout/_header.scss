@@ -1,3 +1,5 @@
+@use "../abstracts";
+
 // Tạo 1 placeholder chứa các thuộc tính css thường dùng chung cho những nơi khác
 // Nơi nào cần dùng đến thì gọi placeholder này
 %flexItemsCenter {
@@ -7,6 +9,14 @@
 
 .header {
     background: var(--header-bg-color);
+
+    @include abstracts.breakpoint(lg) {
+        width: 100px;
+    }
+
+    @include abstracts.breakpoint(sm) {
+        width: 50px;
+    }
 }
 
 .top-bar {
