@@ -1,0 +1,12 @@
+//*** Các biến dành cho giao diện tối
+html.dark {
+    // khai báo các biến để dùng chung cho những nơi khác cần dùng đến
+    --text-color: #ffffff;
+    --icon-color: brightness(0) saturate(100%) invert(100%) sepia(100%)
+        saturate(0%) hue-rotate(345deg) brightness(102%) contrast(101%);
+
+    --header-bg-color: #171c28;
+    --top-act-group-bg-color: #292e39;
+    --top-act-group-shadow: rgba(0, 0, 0, 0.2);
+    --top-act-group-separate: #ededf6;
+}

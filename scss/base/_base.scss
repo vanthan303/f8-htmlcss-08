@@ -4,13 +4,6 @@
     box-sizing: border-box;
 }
 
-:root {
-    // khai báo các biến để dùng chung cho những nơi khác cần dùng đến
-    --text-color: #1a162e;
-    --icon-color: brightness(0) saturate(100%) invert(7%) sepia(11%)
-        saturate(4567%) hue-rotate(216deg) brightness(103%) contrast(95%);
-}
-
 html {
     font-size: 62.5%;
 }
