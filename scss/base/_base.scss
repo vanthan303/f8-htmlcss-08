@@ -36,5 +36,5 @@ select {
 }
 
 .icon {
-    filter: var(--icon-color);
+    filter: var(--icon-color); // filter: thuộc tính này dùng để thay đổi màu sắc cho các icon svg
 }

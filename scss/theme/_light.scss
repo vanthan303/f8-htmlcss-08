@@ -7,7 +7,7 @@ html {
     --icon-color: brightness(0) saturate(100%) invert(7%) sepia(11%)
         saturate(4567%) hue-rotate(216deg) brightness(103%) contrast(95%);
 
-    --body-bg: #F6F6F6;
+    --body-bg: #f6f6f6;
     --header-bg-color: #eee;
     --top-act-group-bg-color: #fff;
     --top-act-group-shadow: rgba(237, 237, 246, 0.2);
@@ -15,5 +15,11 @@ html {
 
     @include abstracts.breakpoint(lg) {
         --header-bg-color: #fff;
+        --header-shadow-color: rgba(237, 237, 246, 0.2);
     }
+
+    // Menu cho dropdown
+    --dropdown-bg-color: #fff;
+    --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
+    --top-menu-border-color: #d2d1d6;
 }

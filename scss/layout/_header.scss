@@ -9,18 +9,23 @@
 
 .header {
     background: var(--header-bg-color);
+
+    @include abstracts.breakpoint(lg) {
+        box-shadow: 0 20px 60px 10px var(--header-shadow-color);
+    }
 }
 
 .top-bar {
     // Sử dụng @extend để Gọi Placeholder %flexItemsCenter ở trên để sử dụng
     @extend %flexItemsCenter;
+    position: relative;
     padding: 30px 0px;
 
     @include abstracts.breakpoint(lg) {
         padding: 20px 0px;
     }
 
-    @include abstracts.breakpoint(sm) {
+    @include abstracts.breakpoint(md) {
         justify-content: space-between;
         padding: 16px 0px;
     }
@@ -35,10 +40,10 @@
 }
 
 .navbar {
-    margin-left: 144px;
+    margin-left: 129px;
 
     @include abstracts.breakpoint(xl) {
-        margin-left: 50px;
+        margin-left: 28px;
     }
 
     @include abstracts.breakpoint(lg) {
@@ -47,12 +52,19 @@
 
     &__list {
         @extend %flexItemsCenter;
-        gap: 30px;
+    }
+
+    &__item {
+        &:hover .dropdown {
+            display: block;
+        }
     }
 
     &__link {
-        display: flex;
+        @extend %flexItemsCenter;
         gap: 6px;
+        height: 50px;
+        padding: 0 15px;
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 146.667%;
@@ -68,7 +80,7 @@
     gap: 20px;
     margin-left: auto;
 
-    @include abstracts.breakpoint(sm) {
+    @include abstracts.breakpoint(md) {
         margin-left: 0;
     }
 
