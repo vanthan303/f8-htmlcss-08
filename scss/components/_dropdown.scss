@@ -32,12 +32,13 @@
 
 .top-menu {
     --main-column-width: 292px;
+    --max-inner-height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
 
     position: relative;
 
     &__main {
         width: var(--main-column-width);
-        height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
+        height: var(--max-inner-height);
         // ở màn hình lớn sẽ cao 582px, khi về màn nhỏ hơn thì sẽ luôn nằm trong tỉ lệ chiều cao của màn hình đó khi đã trừ đi 158px
 
         border-right: 1px solid var(--top-menu-border-color);
@@ -130,4 +131,17 @@
     padding-left: var(--inner-padding);
 
     overflow-y: auto; // hiển thị thanh cuộn dọc
+
+    &--not-main {
+        // initial : reset lại về giá trị ban đầu (giá trị mặc định) của thuộc tính đó
+        position: initial;
+        inset: initial;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        height: var(--max-inner-height);
+
+        padding-left: 0px;
+    }
 }

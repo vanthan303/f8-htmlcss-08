@@ -93,9 +93,12 @@ window.addEventListener("template-loaded", calArrowPos);
  * Giữ active menu khi hover
  *
  * Cách dùng:
- * 1. Thêm class "js-menu-list" vào thẻ ul menu chính
+ * 1. Thêm class "js-menu-list" vào thẻ ul menu chính nếu muốn active sub-menu con khi rê chuột ra ngoài
+ * khi rê chuột lại thì sub-menu con đó vẫn được active
+ *
  * 2. Thêm class "js-dropdown" vào class "dropdown" hiện tại
- *  nếu muốn reset lại item active khi ẩn menu
+ *  nếu muốn reset lại item active khi ẩn menu, khi rê chuột ra ngoài
+ * thì sub-menu sẽ active lại menu đầu tiên khi rê chuột lại
  */
 window.addEventListener("template-loaded", handleActiveMenu);
 
