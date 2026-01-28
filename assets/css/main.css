@@ -1300,8 +1300,8 @@ VD: ẩn thẻ ở màn hình lg thì điền class d-lg-none thì thẻ đó s�
 }
 html.dark {
   --text-color: #ffffff;
-  --icon-color: brightness(0) saturate(100%) invert(100%) sepia(100%)
-      saturate(0%) hue-rotate(345deg) brightness(102%) contrast(101%);
+  --icon-color: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(345deg) brightness(102%)
+      contrast(101%);
   --body-bg: #292e39;
   --header-bg-color: #171c28;
   --top-act-group-bg-color: #292e39;
@@ -1316,18 +1316,19 @@ html.dark {
 html.dark {
   --dropdown-bg-color: #2f3441;
   --dropdown-shadow-color: rgba(23, 28, 40, 0.4);
-  --dropdown-arrow-color: brightness(0) saturate(100%) invert(16%) sepia(3%)
-      saturate(5132%) hue-rotate(186deg) brightness(89%) contrast(83%);
+  --dropdown-arrow-color: brightness(0) saturate(100%) invert(16%) sepia(3%) saturate(5132%) hue-rotate(186deg)
+      brightness(89%) contrast(83%);
   --top-menu-border-color: #171c28;
-  --menu-column-icon-color: brightness(0) saturate(100%) invert(100%)
-      sepia(18%) saturate(1022%) hue-rotate(180deg) brightness(100%)
-      contrast(97%);
+  --menu-column-icon-color: brightness(0) saturate(100%) invert(100%) sepia(18%) saturate(1022%) hue-rotate(180deg)
+      brightness(100%) contrast(97%);
+  --sidebar-bg: #292e39;
+  --sidebar-shadow: rgba(23, 28, 40, 0.4);
 }
 
 html {
   --text-color: #1a162e;
-  --icon-color: brightness(0) saturate(100%) invert(7%) sepia(11%)
-      saturate(4567%) hue-rotate(216deg) brightness(103%) contrast(95%);
+  --icon-color: brightness(0) saturate(100%) invert(7%) sepia(11%) saturate(4567%) hue-rotate(216deg) brightness(103%)
+      contrast(95%);
   --body-bg: #f6f6f6;
   --header-bg-color: #eee;
   --top-act-group-bg-color: #fff;
@@ -1344,6 +1345,8 @@ html {
   --dropdown-bg-color: #fff;
   --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
   --top-menu-border-color: #d2d1d6;
+  --sidebar-bg: #fff;
+  --sidebar-shadow: rgba(200, 200, 200, 0.4);
 }
 
 .top-act__btn, .top-act__group, .top-act, .navbar__link, .navbar__list, .top-bar {
@@ -1391,16 +1394,23 @@ html {
     z-index: 9;
     margin-left: 0;
     padding: 20px 0;
-    background: #fff;
+    border-radius: 0px 20px 20px 0px;
+    background: var(--sidebar-bg);
     translate: -100%;
     transition: translate 0.5s;
   }
   .navbar.show {
     translate: 0;
+    box-shadow: 0px 40px 90px 20px var(--sidebar-shadow);
   }
   .navbar.show ~ .navbar__overlay {
     visibility: visible;
     opacity: 1;
+  }
+}
+@media (max-width: 575.98px) {
+  .navbar {
+    inset: 0 20% 0 0;
   }
 }
 .navbar__close-btn {
@@ -1410,6 +1420,11 @@ html {
   .navbar__close-btn {
     display: block;
     padding: 10px 40px;
+  }
+}
+@media (max-width: 575.98px) {
+  .navbar__close-btn {
+    padding: 0 20px 10px;
   }
 }
 .navbar__overlay {
@@ -1430,8 +1445,18 @@ html {
   .navbar__list {
     flex-direction: column;
     align-items: flex-start;
-    height: calc(100% - 29px);
+    height: calc(100% - 40px);
     overflow-y: auto;
+  }
+}
+@media (max-width: 767.98px) {
+  .navbar__list {
+    height: calc(100% - 140px);
+  }
+}
+@media (max-width: 575.98px) {
+  .navbar__list {
+    height: calc(100% - 124px);
   }
 }
 .navbar__item:hover .dropdown {
@@ -1462,6 +1487,12 @@ html {
     padding: 0 40px;
     font-size: 1.6rem;
     line-height: 150%;
+  }
+}
+@media (max-width: 575.98px) {
+  .navbar__link {
+    height: 44px;
+    padding: 0px 20px;
   }
 }
 .navbar__arrow {
@@ -1522,6 +1553,29 @@ html {
   border-radius: 8px;
   display: block;
   cursor: pointer;
+}
+
+.nav-btn {
+  height: 50px;
+  align-items: center;
+  padding: 0 40px;
+}
+@media (max-width: 575.98px) {
+  .nav-btn {
+    height: 44px;
+    padding: 0 20px;
+  }
+}
+.nav-btn__title, .nav-btn__qnt {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 146.667%;
+}
+.nav-btn__title {
+  margin-left: 16px;
+}
+.nav-btn__qnt {
+  margin-left: auto;
 }
 
 .logo {
