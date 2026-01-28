@@ -10,9 +10,7 @@
     display: none; // ẩn đi để khi hover sẽ hiển thị ra
 
     @include abstracts.breakpoint(lg) {
-        display: block;
         position: initial; // initial: giá trị này sẽ reset thuộc tính position về giá trị mặc định
-
         padding-top: 0;
     }
 
