@@ -9,6 +9,10 @@
     padding-top: 54px;
     display: none; // ẩn đi để khi hover sẽ hiển thị ra
 
+    @include abstracts.breakpoint(lg) {
+        display: block;
+    }
+
     &__inner {
         --inner-padding: 30px;
 

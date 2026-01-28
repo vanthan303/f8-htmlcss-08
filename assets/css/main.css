@@ -1209,7 +1209,8 @@ select {
   }
 }
 /*
-File này dùng để tạo ra các class css cho các kích thước màn hình cho thuộc tính css 
+File này dùng để tạo ra các class css cho các kích thước màn hình cho thuộc tính css
+VD: ẩn thẻ ở màn hình lg thì điền class d-lg-none thì thẻ đó sẽ được ẩn đi thay cho viết code css trực tiếp
 */
 .d-block {
   display: block !important;
@@ -1547,6 +1548,11 @@ html {
   width: min(1240px, 100%);
   padding-top: 54px;
   display: none;
+}
+@media (max-width: 991.98px) {
+  .dropdown {
+    display: block;
+  }
 }
 .dropdown__inner {
   --inner-padding: 30px;

@@ -1,5 +1,6 @@
 /*
-File này dùng để tạo ra các class css cho các kích thước màn hình cho thuộc tính css 
+File này dùng để tạo ra các class css cho các kích thước màn hình cho thuộc tính css
+VD: ẩn thẻ ở màn hình lg thì điền class d-lg-none thì thẻ đó sẽ được ẩn đi thay cho viết code css trực tiếp
 */
 
 $breakpoints: (
