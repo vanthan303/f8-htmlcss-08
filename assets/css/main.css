@@ -1365,6 +1365,7 @@ html {
 
 .top-bar {
   position: relative;
+  z-index: 1;
   padding: 30px 0px;
 }
 @media (max-width: 991.98px) {
@@ -1794,18 +1795,39 @@ html {
   overflow: hidden;
 }
 .slideshow__item {
+  position: relative;
   flex-shrink: 0;
   width: 100%;
+  padding-top: 34%;
+  /*
+  padding-top: 34%; : lấy chiều cao / chiều rộng của tấm hình để tạo ra khoảng trống có sẵn dành cho tấm hình
+  khi hình ảnh chưa được tải lên kịp thì "khu vực đó luôn đó 1 khoảng trống nhất định" dành cho tấm hình
+  để khắc phục tình trạng nội dung bên dưới dồn lên phía trên khi hình chưa được tải xong gây ra hiệu ứng giật
+  trang web gây khó chịu cho người dùng.
+  kết hợp với thuộc tính position: relative; cho thẻ cha và position: absolute; cho thẻ hình ảnh
+  */
+}
+@media (max-width: 767.98px) {
+  .slideshow__item {
+    padding-top: 50%;
+  }
 }
 .slideshow__img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
 }
 .slideshow__page {
   --color: #fff;
   position: absolute;
   align-items: center;
-  bottom: 70px;
-  left: 70px;
+  bottom: 15%;
+  left: 5.2%;
+  width: 12.8%;
   display: flex;
   column-gap: 24px;
 }
@@ -1815,9 +1837,15 @@ html {
   line-height: 144.444%;
   color: var(--color);
 }
+@media (max-width: 767.98px) {
+  .slideshow__num {
+    font-size: 1.4rem;
+    line-height: 142.857%;
+  }
+}
 .slideshow__slider {
   position: relative;
-  width: 172px;
+  width: 100%;
   height: 4px;
   flex-shrink: 0;
   background: var(--color);
@@ -1830,6 +1858,11 @@ html {
   height: 14px;
   border: 4px solid var(--color);
   border-radius: 50%;
+}
+@media (max-width: 767.98px) {
+  .slideshow__slider::before, .slideshow__slider::after {
+    border-width: 3px;
+  }
 }
 .slideshow__slider::before {
   left: 0;

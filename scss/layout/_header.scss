@@ -19,6 +19,7 @@
     // Sử dụng @extend để Gọi Placeholder %flexItemsCenter ở trên để sử dụng
     @extend %flexItemsCenter;
     position: relative;
+    z-index: 1;
     padding: 30px 0px;
 
     @include abstracts.breakpoint(lg) {
