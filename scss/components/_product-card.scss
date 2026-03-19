@@ -1,6 +1,10 @@
 .product-card {
+    display: flex;
+    flex-direction: column;
+
     padding: 16px;
     height: 100%; // khắc phục tình trạng các item cao thấp khác nhau
+
     border-radius: 20px;
     background: var(--product-card-bg);
     box-shadow: 0 20px 60px 10px var(--product-card-shadow);
@@ -48,6 +52,7 @@
     &__row {
         display: flex;
         align-items: center;
+        margin-top: auto;
     }
 
     &__star {
