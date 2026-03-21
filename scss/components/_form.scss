@@ -1,3 +1,7 @@
+@use "../abstracts";
+
+$error-color: #ed4337;
+
 .form {
     &:has(:invalid) &__submit-btn {
         opacity: 0.5;
@@ -16,15 +20,15 @@
     // tạo viền đỏ, nền đỏ cho textfield khi có lỗi validation
     &__group:has(:invalid):has(&__input:not(:placeholder-shown)) {
         .form__text-input {
-            border-color: red;
-            background: rgba($color: red, $alpha: 0.1);
+            border-color: $error-color;
+            background: rgba($color: $error-color, $alpha: 0.1);
         }
 
         .form__error,
         .form__input-icon-error {
             display: block;
             margin-left: 12px;
-            animation: shake 0.8s; // shake gọi tên của hiệu ứng bên file _keyframes.scss
+            animation: shake 0.5s; // shake gọi tên của hiệu ứng bên file _keyframes.scss
         }
 
         .form__input-icon {
@@ -45,6 +49,10 @@
         &:focus-within {
             border-color: #77dae6;
         }
+
+        @include abstracts.screen(md) {
+            height: 48px;
+        }
     }
 
     &__input {
@@ -63,6 +71,10 @@
         &::placeholder {
             color: #d2d1d6;
         }
+
+        @include abstracts.screen(md) {
+            font-size: 1.6rem;
+        }
     }
 
     &__error {
@@ -70,7 +82,7 @@
         font-size: 1.4rem;
         font-weight: 500;
         margin-top: 10px;
-        color: red;
+        color: $error-color;
         display: none;
     }
 
@@ -87,7 +99,7 @@
 
         display: flex;
         align-items: center;
-        user-select: none;
+        user-select: none; // Khắc phục tình trạng "click đúp 2 lần" bị bôi đen nội dung trên trình duyệt
 
         &-label {
             margin-left: 29px;
@@ -95,6 +107,10 @@
             font-size: 1.5rem;
             font-weight: 500;
             line-height: 146.667%;
+
+            @include abstracts.screen(md) {
+                font-size: 1.4rem;
+            }
         }
 
         &::before,
