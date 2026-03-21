@@ -47,6 +47,11 @@
 
 // Buttons
 .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
     height: 46px;
     padding: 0 20px;
     border-radius: 6px;
@@ -58,8 +63,13 @@
 
     user-select: none; // không cho bôi đen, click đúp chữ trong button
 
+    // tác động đến nút thứ 2
     + .btn {
-        margin-left: 20px;
+        &:not(.btn--no-margin) {
+            // nếu "ko có" class btn--no-margin thì button sẽ có margin-left: 20px;
+            // ngược lại trong button "có khai báo" class btn--no-margin thì sẽ ko có margin-left
+            margin-left: 20px;
+        }
     }
 
     &--text {
