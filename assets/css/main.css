@@ -1368,7 +1368,11 @@ html.dark {
   --filter-form-shadow: rgba(0, 0, 0, 0.4);
   --filter-form-tag-bg: #171c28;
   --filter-form-arrow: var(--dropdown-arrow-color);
-  --filter-form-footer-bg: ;
+  --auth-content-bg: #292e39;
+  --auth-intro-bg: #171c28;
+  --auth-intro-text-color: #b9babe;
+  --auth-content-color: #b9babe;
+  --form-placeholder-color: #b9babe;
 }
 
 html {
@@ -1417,6 +1421,9 @@ html {
   html {
     --auth-intro-bg: #fff;
   }
+}
+html {
+  --form-placeholder-color: #d2d1d6;
 }
 
 .top-act__btn, .top-act__group, .top-act, .navbar__link, .navbar__list, .top-bar {
@@ -2610,7 +2617,7 @@ html {
   margin-left: 12px;
 }
 .form__input::placeholder {
-  color: #d2d1d6;
+  color: var(--form-placeholder-color);
 }
 @media (max-width: 767.98px) {
   .form__input {
@@ -2748,6 +2755,7 @@ html {
   font-size: 1.8rem;
   font-weight: 500;
   line-height: 144.444%;
+  color: var(--auth-intro-text-color);
 }
 @media (max-width: 767.98px) {
   .auth__intro-text {
@@ -2788,6 +2796,7 @@ html {
   font-size: 3rem;
   font-weight: 500;
   line-height: 146.667%;
+  color: var(--auth-content-color);
 }
 @media (max-width: 767.98px) {
   .auth__heading {
@@ -2797,7 +2806,7 @@ html {
 }
 .auth__desc {
   margin-top: 10px;
-  padding: 0 30px;
+  padding: 0 20px;
   color: #9e9da8;
   font-size: 1.5rem;
   font-weight: 500;
