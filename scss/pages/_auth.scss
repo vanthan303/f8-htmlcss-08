@@ -42,8 +42,7 @@
         }
 
         &-img {
-            width: var(--width);
-            max-width: 100%;
+            width: min(424px, 100%);
         }
 
         &-text {
@@ -125,7 +124,6 @@
     &__message {
         margin-top: 30px;
     }
-    
 
     &__form {
         width: 100%;
