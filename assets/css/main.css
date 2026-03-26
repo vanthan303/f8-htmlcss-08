@@ -2677,7 +2677,20 @@ html {
   border-color: transparent transparent #fff #fff;
   rotate: -45deg;
   left: 2px;
-  top: 5px;
+  top: 4px;
+}
+
+.message {
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+}
+.message--success {
+  background: rgba(39, 243, 117, 0.2);
+  border: 1.5px solid #46a05c;
 }
 
 .home__container {
@@ -2747,7 +2760,8 @@ html {
   bottom: 50px;
 }
 .auth__intro-img {
-  width: 100%;
+  width: var(--width);
+  max-width: 100%;
 }
 .auth__intro-text {
   max-width: 412px;
@@ -2817,9 +2831,15 @@ html {
     font-size: 1.4rem;
   }
 }
+.auth__message {
+  margin-top: 30px;
+}
 .auth__form {
   width: 100%;
   margin-top: 30px;
+}
+.auth__form-forgot {
+  margin-top: 10px;
 }
 @media (max-width: 767.98px) {
   .auth__form {
