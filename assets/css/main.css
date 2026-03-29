@@ -2940,4 +2940,52 @@ html {
   margin-top: 30px;
 }
 
+.prod-review {
+  padding: 0 30px;
+}
+.prod-review__list {
+  display: flex;
+  overflow: hidden;
+}
+.prod-review__item {
+  position: relative;
+  width: 100%;
+  flex-shrink: 0;
+  padding-top: 92%;
+}
+.prod-review__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.prod-review__thumbs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 30px;
+}
+.prod-review__thumb-img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  border: 1.5px solid rgba(158, 157, 168, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity, border-color;
+  transition-duration: 0.3s;
+}
+.prod-review__thumb-img:hover {
+  opacity: 1;
+  border-color: #9e9da8;
+}
+.prod-review__thumb-img--current {
+  opacity: 1;
+  border-color: #ffb700;
+}
+
 /*# sourceMappingURL=main.css.map */
