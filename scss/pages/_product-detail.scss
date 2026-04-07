@@ -4,11 +4,22 @@
     display: flex;
     flex-direction: column;
     min-height: 80vh;
+    padding-bottom: 50px;
+
     background: var(--product-detail-bg);
+}
+
+.prod-info-content {
+    border-radius: 20px;
+    background: var(--product-detail-info-content-bg);
 }
 
 .product-container {
     margin-top: 30px;
+
+    @include abstracts.screen(md) {
+        margin-top: 20px;
+    }
 }
 
 .prod-review {
@@ -17,6 +28,10 @@
     @include abstracts.screen(lg) {
         display: flex;
         flex-direction: row-reverse;
+    }
+
+    @include abstracts.screen(md) {
+        padding: 16px;
     }
 
     &__list {
@@ -67,14 +82,14 @@
         object-fit: contain;
         border: 1.5px solid rgb(158, 157, 168, 0.3);
         border-radius: 8px;
-        cursor: pointer;
         opacity: 0.9;
         transition: opacity, border-color;
         transition-duration: 0.3s;
 
-        &:hover {
+        &:not(&--current):hover {
             opacity: 1;
             border-color: #9e9da8;
+            cursor: pointer;
         }
 
         &--current {
@@ -86,7 +101,8 @@
 
 .prod-info {
     padding: 60px;
-    background: #f6f6f6;
+    border-radius: 10px;
+    background: var(--prod-detail-info-bg);
 
     @include abstracts.screen(xxl) {
         padding: 40px;
@@ -94,6 +110,12 @@
 
     @include abstracts.screen(lg) {
         margin-top: 30px;
+    }
+
+    @include abstracts.screen(md) {
+        border-radius: 20px;
+        margin-top: 0;
+        padding: 0 16px 16px;
     }
 
     &__heading {
@@ -107,7 +129,7 @@
     }
 
     &__tag {
-        background: #ededf6;
+        background: var(--product-detail-tag-bg);
     }
 
     &__card {
@@ -130,8 +152,9 @@
 
     &__tax {
         padding: 2px 8px;
+        border-radius: 4px;
         margin-left: 10px;
-        background: linear-gradient(0deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), #67b044;
+        background: rgb(103 176 68 / 20%);
         color: #67b044;
         font-size: 1.4rem;
         font-weight: 500;
@@ -164,6 +187,10 @@
 
     @include abstracts.screen(xxl) {
         padding-left: 10px;
+    }
+
+    @include abstracts.screen(lg) {
+        padding-left: 0;
     }
 }
 
