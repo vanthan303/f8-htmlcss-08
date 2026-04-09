@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+* {
+    // bỏ highlight (hiển thị nền màu xanh khi bấm vào) khi bấm vào các thẻ a ở tablet và mobile
+    -webkit-tap-highlight-color: transparent;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -42,7 +47,6 @@ select {
     color: inherit;
     outline: none; // xóa bỏ đường viên đậm khi bấm chuột vào các thẻ html được thiết lập ở đây
     border: none;
-    -webkit-tap-highlight-color: transparent; // bỏ highlight (hiển thị nền màu xanh khi bấm vào) khi bấm vào các thẻ a ở tablet và mobile
 }
 
 input {
