@@ -316,6 +316,7 @@
         right: 90px;
         height: 20.5px;
         filter: var(--dropdown-arrow-color);
+        // sử dụng thuộc tính filter để có thể đổi được màu của hình ảnh
     }
 
     &__top {
