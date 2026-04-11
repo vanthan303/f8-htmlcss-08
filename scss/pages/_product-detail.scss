@@ -9,17 +9,17 @@
     background: var(--product-detail-bg);
 }
 
-.prod-info-content {
-    border-radius: 20px;
-    background: var(--product-detail-info-content-bg);
-}
-
 .product-container {
     margin-top: 30px;
 
     @include abstracts.screen(md) {
         margin-top: 20px;
     }
+}
+
+.prod-info-content {
+    border-radius: 20px;
+    background: var(--product-detail-info-content-bg);
 }
 
 .prod-review {
