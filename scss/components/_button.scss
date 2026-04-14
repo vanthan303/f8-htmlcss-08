@@ -60,20 +60,24 @@
 
     font-size: 1.8rem;
     font-weight: 500;
-
+    white-space: nowrap; // không cho text trong button xuống dòng
     user-select: none; // không cho bôi đen, click đúp chữ trong button
+
+    &--small {
+        height: 40px;
+        padding: 0 16px;
+    }
 
     // tác động đến nút thứ 2
     + .btn {
         &:not(.btn--no-margin) {
-            // nếu "ko có" class btn--no-margin thì button sẽ có margin-left: 20px;
-            // ngược lại trong button "có khai báo" class btn--no-margin thì sẽ ko có margin-left
+            // nếu "ko có" class "btn--no-margin" thì button sẽ có margin-left: 20px;
+            // ngược lại trong button "có khai báo" class "btn--no-margin" thì sẽ ko có margin-left
             margin-left: 20px;
         }
     }
 
     &--text {
-        color: #9e9da8;
         background: transparent;
         font-weight: 400;
     }
