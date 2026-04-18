@@ -8,6 +8,17 @@ $error-color: #ed4337;
         pointer-events: none;
     }
 
+    &__row {
+        display: flex;
+        gap: 30px;
+
+        > * {
+            // > * : 2 kí hiệu này sẽ tác động css đến các thẻ con bên trong nó
+            // 2 thẻ con là form__group
+            flex-grow: 1;
+        }
+    }
+
     &__group {
         margin-top: 30px;
 
@@ -40,18 +51,42 @@ $error-color: #ed4337;
         }
     }
 
+    &__text-area,
     &__text-input {
         display: flex;
         align-items: center;
 
-        height: 50px;
         padding: 0 12px;
         border-radius: 10px;
         border: 1.5px solid #d2d1d6;
 
+        &--small {
+            border-radius: 8px;
+            border: 1px solid #d2d1d6;
+        }
+
         // sự kiện khi bấm vào textfield thì đổi màu đường viền cho thẻ div
         &:focus-within {
             border-color: #77dae6;
+        }
+    }
+
+    &__text-area {
+        height: 100px;
+        padding: 12px;
+
+        &-input {
+            width: 100% !important;
+
+            resize: none; // loại bỏ chế độ kéo thả mặc định để điều chỉnh chiều rộng, chiều cao của textarea
+        }
+    }
+
+    &__text-input {
+        height: 50px;
+
+        &--small {
+            height: 42px;
         }
 
         @include abstracts.screen(md) {
@@ -59,18 +94,14 @@ $error-color: #ed4337;
         }
     }
 
-    &__input {
+    &__input,
+    &__text-area-input {
         flex: 1;
-        height: 100%;
+        height: 100% !important;
 
         font-size: 1.8rem;
         font-weight: 500;
         line-height: 144.444%;
-
-        &-icon {
-            margin-left: 12px;
-            // tạo 1 khoảng cách để text không dính liền vào icon khi nhập nội dung dài
-        }
 
         &::placeholder {
             color: var(--form-placeholder-color);
@@ -78,6 +109,13 @@ $error-color: #ed4337;
 
         @include abstracts.screen(md) {
             font-size: 1.6rem;
+        }
+    }
+
+    &__input {
+        &-icon {
+            margin-left: 12px;
+            // tạo 1 khoảng cách để text không dính liền vào icon khi nhập nội dung dài
         }
     }
 

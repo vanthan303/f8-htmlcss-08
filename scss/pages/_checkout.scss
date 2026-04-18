@@ -219,6 +219,10 @@
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 145.667%;
+
+        &-btn {
+            display: flex;
+        }
     }
 
     &__total-price {
@@ -285,32 +289,18 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-    }
-
-    &__title {
-        font-size: 1.8rem;
-        font-weight: 500;
-        line-height: 144.444%;
-    }
-
-    &__desc {
-        margin-top: 4px;
-        font-size: 1.5rem;
-        line-height: 146.667%;
-    }
-}
-
-.address-card {
-    display: flex;
-    margin-top: 30px;
-
-    &__left {
-        flex: 1;
-        display: flex;
         gap: 16px;
+
+        @include abstracts.screen(md) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 
-    &__info {
+    &__btn {
+        @include abstracts.screen(md) {
+            height: 46px;
+        }
     }
 
     &__title {
@@ -326,12 +316,62 @@
     }
 
     &__list {
+    }
+
+    &__message {
+        margin-top: 30px;
+        font-weight: 500;
+    }
+
+    &__link {
+        color: #0071dc;
+    }
+}
+
+.address-card {
+    display: flex;
+    margin-top: 30px;
+    gap: 16px;
+
+    @include abstracts.screen(md) {
+        flex-direction: column;
+    }
+
+    &__left {
+        flex: 1;
+        display: flex;
+        gap: 16px;
+    }
+
+    &__info {
+        width: 100%;
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 144.444%;
+    }
+
+    &__desc {
+        width: min(520px, 90%);
+        margin-top: 4px;
+        font-size: 1.5rem;
+        line-height: 146.667%;
+    }
+
+    &__list {
         margin-top: 20px;
         gap: 30px;
         display: flex;
         list-style: disc inside; // hiển thị dấu chấm đen cho các <li>
         font-size: 1.4rem;
         line-height: 142.857%;
+
+        @include abstracts.screen(sm) {
+            flex-direction: column;
+            gap: 16px;
+        }
 
         &-item {
             margin-left: 8px;
@@ -349,6 +389,26 @@
             gap: 10px;
             font-size: 1.8rem;
             line-height: 144.444%;
+        }
+    }
+
+    &__checkbox {
+        &-input {
+            appearance: none; // thuộc tính này loại bỏ các style mặc định của các thẻ nằm trong thẻ <form>
+
+            // khi chưa check vào thì hiển thị icon chưa check lên
+            &::before {
+                content: url("../icons/checkbox-uncheck.svg");
+            }
+
+            &:not(:checked)::before {
+                filter: var(--icon-color);
+            }
+
+            // khi check vào thì thay thế bằng icon checked màu xanh lá cây lên
+            &:checked::before {
+                content: url("../icons/checkbox-checked.svg");
+            }
         }
     }
 }
